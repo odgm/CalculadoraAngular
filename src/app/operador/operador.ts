@@ -8,11 +8,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './operador.css',
 })
 export class Operador {
-  operador1 = 0;
-  operador2 = 0;
-  resul = 0;
+  operador1: number = 0;
+  operador2: number = 0;
+  resul: number = 0;
 
   resultado() {
-    this.resul = (this.operador1 + this.operador2);
+    this.resul = this.operador1 + this.operador2;
   }
 }

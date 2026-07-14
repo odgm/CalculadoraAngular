@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-resultado',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './resultado.html',
   styleUrl: './resultado.css',
 })
-export class Resultado {}
+export class Resultado {
+  @Input() resultadoHijo: number | null = null;
+}

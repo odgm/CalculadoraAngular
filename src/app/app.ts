@@ -1,13 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Operador } from "./operador/operador";
+import { Calculadora } from './calculadora/calculadora';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Operador],
+  imports: [Calculadora],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = 'Aplicación Calculadora';
+  resultado: number = 0;
+
+  recibirResultado(resultado: number){
+    this.resultado = resultado;
+  }
 }

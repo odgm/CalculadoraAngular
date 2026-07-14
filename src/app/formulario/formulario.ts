@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './formulario.html',
   styleUrl: './formulario.css',
 })
 export class Formulario {
-  @Output() operacion = new EventEmitter<number>();
-  @Input() resultado!: number;
+  
+  operador1: number | null = null;
+  operador2: number | null = null;
 
-  operador1: number = 0;
-  operador2: number = 0;
+  @Output() resultadoSuma = new EventEmitter<number>();
 
-  enviarResultado() {
-    this.operacion.emit(this.operador1 + this.operador2);
+  sumar() {
+    if(this.operador1 && this.operador2){
+      const resultado = this.operador1 + this.operador2;
+      this.resultadoSuma.emit(resultado);
+    } else {
+      console.log('Ingresar valores correctos');
+    }
+
   }
 }

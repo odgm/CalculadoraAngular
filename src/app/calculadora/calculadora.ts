@@ -8,5 +8,10 @@ import { Formulario } from '../formulario/formulario';
   styleUrl: './calculadora.css',
 })
 export class Calculadora {
+  resultado: number = 0;
+
+  procesarResultado(resultado: number) {
+    this.resultado = resultado;
+  }
   protected readonly title = 'Aplicación Calculadora';
 }

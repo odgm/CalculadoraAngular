@@ -1,7 +1,5 @@
   <div class="container text-center">
     <h1 class="text-center text-warning my-4">{{title}}</h1>
     <app-formulario (resultadoSuma)="procesarResultado($event)"></app-formulario>
-    <div class="alert alert-success mt-4 mx-auto w-25">
-      Resultado: {{resultado}}
-    </div>
+    <app-resultado/>
   </div>

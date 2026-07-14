@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { Formulario } from '../formulario/formulario';
+import { Resultado } from '../resultado/resultado';
 
 @Component({
   selector: 'app-calculadora',
-  imports: [Formulario],
+  imports: [Formulario, Resultado],
   templateUrl: './calculadora.html',
   styleUrl: './calculadora.css',
 })
 export class Calculadora {
-  resultado: number = 0;
+  resultadoPadre: number = 0;
 
   procesarResultado(resultado: number) {
-    this.resultado = resultado;
+    this.resultadoPadre = resultado;
   }
   protected readonly title = 'Aplicación Calculadora';
 }
